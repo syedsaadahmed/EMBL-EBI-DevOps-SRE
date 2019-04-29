@@ -45,3 +45,5 @@ Credentials are (username:admin & Password:admin), you can change it in docker-c
 Following the strategy to use the concept of Infrastructure as a code, i have used the stack of docker, prometheus and grafana. Prometheus is an easy to use open-source monitoring system. it works very well in a distributed, cloud-native environment. It is very fast and easy to deploy, Moreover it also has compatible integrations with visualization tools like Grafana etc.
 
 Yes, there are other options available to solve this question, such as we can use NewRelic, Sensu and other such tools for achieving this task. But nowadays many huge organizations and companies are adopting prometheus as their baseline for monitoring their infrastructure and applications. There is a lot to explore and achieve via using prometheus.
+
+# Service Discovery, Scalibility and Other Such Options
