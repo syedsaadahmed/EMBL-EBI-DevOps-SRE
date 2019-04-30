@@ -1,4 +1,4 @@
-# Server Monitoring Via Prometheus and Docker
+# Monitoring Server Metrics via Prometheus and Docker
 
 For monitoring a server memory, CPU, disk and other stats, we are here using Docker, Prometheus and Grafana in our whole stack.
 In particular, we have used prometheus an open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach. for keeping the stack in separate containers and spaces we have kept every service in a separate docker container. Furthermore for scraping the metrics we have used a node-exporter which was provided by the community.
