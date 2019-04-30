@@ -46,4 +46,6 @@ Following the strategy to use the concept of Infrastructure as a code, i have us
 
 Yes, there are other options available to solve this question, such as we can use NewRelic, Sensu and other such tools for achieving this task. But nowadays many huge organizations and companies are adopting prometheus as their baseline for monitoring their infrastructure and applications. There is a lot to explore and achieve via using prometheus.
 
-# Service Discovery, Scalibility and Other Such Options
+# Service Discovery and Other Such Options
+
+Prometheus provides a File-based Service Discovery mechanism, Easiest is to utilize that method, one must have to maintain a target.json file containing information of all the node-exporters. furthermore to automate the whole process we can use ansible playbook or some other cookbook on Prometheus server to edit that target.json file locally and same playbook to install node-exporter service on our servers/nodes.
