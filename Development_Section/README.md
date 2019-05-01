@@ -22,3 +22,23 @@ It will deploy the web service, no need of any manual or human intervention.
 ## Checking the User Interface
 
 https://localhost:5000/
+
+
+# ADDRESSING FEW ASPECTS REGARDING RESTFUL-API CREATED
+
+## Testing
+
+
+## Security
+
+
+## Scalibility
+
+
+## Limitations
+
+
+## Documentation
+
+
+## Deployment
