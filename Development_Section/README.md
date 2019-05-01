@@ -24,7 +24,7 @@ It will deploy the web service, no need of any manual or human intervention.
 https://localhost:5000/
 
 
-# ADDRESSING FEW ASPECTS REGARDING RESTFUL-API CREATED
+# ADDRESSING FEW ASPECTS REGARDING RESTFUL-API
 
 ## Testing
 
