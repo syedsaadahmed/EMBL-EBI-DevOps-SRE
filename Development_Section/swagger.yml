@@ -1,0 +1,145 @@
+
+swagger: "2.0"
+info:
+  description: Swagger file
+  version: "1.0.0"
+  title: Swagger REST API
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+paths:
+  /person:
+    get:
+      operationId: person.get_all
+      tags:
+        - person
+      description: Read the list of person
+      parameters:
+        - name: length
+          in: query
+          type: integer
+          description: Number of person to get from person
+          required: false
+        - name: offset
+          in: query
+          type: integer
+          description: Offset from beginning of list where to start gathering person
+          required: false
+      responses:
+        200:
+          description: Successfully read person list operation
+          schema:
+            type: array
+            items:
+              properties:
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                age:
+                  type: integer
+                favourite_color:
+                  type: string
+
+
+    post:
+      operationId: person.add
+      tags:
+        - person
+      description: add a new person in the person list
+      parameters:
+        - name: person
+          in: body
+          description: Person to add
+          required: True
+          schema:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: First name of person to added
+              last_name:
+                type: string
+                description: Last name of person to added
+              age:
+                type: integer
+                description: Age of person to be added
+              favourite_color:
+                type: string
+                description: Favourite color of person to added
+      responses:
+        201:
+          description: Person successfully added to the list 
+
+
+
+  /person/{first_name}:
+    get:
+      operationId: person.get_one
+      tags:
+        - person
+      description: Read one person from the person list
+      parameters:
+        - name: first_name
+          in: path
+          description: First name of the person to fetch from the list
+          type: string
+          required: True
+      responses:
+        200:
+          description: all read person from person's list
+          schema:
+            properties:
+              first_name:
+                type: string
+              last_name:
+                type: string
+              age:
+                type: integer
+              favourite_color:
+                type: string
+    put:
+      operationId: person.update
+      tags:
+        - person
+      description: Update a person in the person list
+      parameters:
+        - name: first_name
+          in: path
+          description: First name of the person to update in the list
+          type: string
+          required: True
+        - name: person
+          in: body
+          schema:
+            type: object
+            properties:
+              first_name:
+                type: string
+              last_name:
+                type: string
+              age:
+                type: integer
+              favourite_color:
+                type: string                
+      responses:
+        200:
+          description: Successfully updated person in person list
+
+    delete:
+      operationId: person.delete
+      tags:
+        - person
+      description: Delete a person from the list
+      parameters:
+        - name: first_name
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a person from person list
