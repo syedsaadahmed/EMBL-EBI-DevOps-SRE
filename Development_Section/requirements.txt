@@ -1,5 +1,5 @@
 connexion==2.2.0
-cryptography==1.2.3
+cryptography==2.6.1
 Flask==1.0.2
 Jinja2==2.10.1
 pathlib==1.0.1
