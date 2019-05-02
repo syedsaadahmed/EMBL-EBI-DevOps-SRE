@@ -24,9 +24,10 @@ It will deploy the web service, no need of any manual or human intervention.
 https://localhost:5000/
 
 
-# ADDRESSING FEW ASPECTS REGARDING RESTFUL-API
+# FEW ASPECTS RELATED TO RESTFUL-API
 
 ## Testing
+
 
 
 ## Security
@@ -37,10 +38,19 @@ In short vast variety of fruitful solutions are there, it depends on scenario an
 ## Scalibility
 
 
+
 ## Limitations
 
+A issue you would probably face is that the server is single-threaded. This means that it will handle each request one at a time, serially. This means that if you are trying to serve more than one request, so the requests will take longer. If any given requests happens to take a long time (say, 20 seconds) then your entire application is unresponsive for that time (20 seconds). This is only the default, of course: you could bump the thread counts (or have requests be handled in other processes), which might alleviate some issues. But once again, it can still be slow under a "high" load. What is considered a "high" load will be dependent on your application and the expectations of a maximum acceptable response time.
+
+Another issue is security: if you are concerned at ALL about security, then you should not use the development server. It is not ready to withstand any sort of attack.
+
+Yes, you could still conceivably use it in production. And yes, I would still recommend using a "real" web server. If you don't like the idea of needing to install something like Apache or Nginx, you can still go with a solution that is still as easy as "run a python script" by using some of the WSGI Standalone servers, which can run a server that is designed to be in production with something just as simple as running python run_app.py in the command line.
 
 ## Documentation
 
+This RESTFUL-API is written using Python-Flask, Huge, extensive and detailed documentation for flask is provided (http://flask.pocoo.org/docs/1.0/), Furthermore a very strong support is also there on multiple platform all around the web.
 
 ## Deployment
+
+In the current scenario, Python-Flask own development web server is used to run the service. one must not use this technique on a production web server, Mulitple other web servers dedicated for running such type of service are present such as "Gunicorn" is a good example, we can also use "Apache" or "Nginx" for that. Also proper database either SQL or No-SQL depends on the usage setup must be used with the deployment.
