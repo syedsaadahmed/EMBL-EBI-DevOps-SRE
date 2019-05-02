@@ -31,6 +31,8 @@ https://localhost:5000/
 
 ## Security
 
+For security of our RESTFUL API, we can use mulitple options, which are provide by Python-flask like Flask-JWT tokens, Flask OAuth2 libraries, Moreover one can have route authentication and authorization implemented in his web service.
+In short vast variety of fruitful solutions are there, it depends on scenario and infrastructure that how one must chose to secure the endpoints and routes present in web service.
 
 ## Scalibility
 
