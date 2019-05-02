@@ -20,11 +20,11 @@ One must have Python installed in his local system for deploying this RESTFUL-AP
 
 ```gunicorn --workers 4 --access-logfile /var/tmp/gunicorn.logs --bind 0.0.0.0:5000 wsgi:app``` 
 
-** workers = 4 (The number of worker processes. This number should generally be between 2-4 workers per core in the server.) **
+**workers = 4 (The number of worker processes. This number should generally be between 2-4 workers per core in the server.)**
 
-** access-logfile = path of the file, where logs are to be saved **
+**access-logfile = path of the file, where logs are to be saved**
 
-** bind = Specify a server socket to bind. **
+**bind = Specify a server socket to bind.**
 
 It will deploy the web service, no need of andy manual or human intervention. 
 
