@@ -22,10 +22,11 @@ PERSON = {
 }
 
 def get_all():
-    get_all_values = [] 
-    for key in PERSON.keys():
-        get_all_values.append(PERSON[key])
-    return get_all_values
+    # get_all_values = [] 
+    # for key in PERSON.keys():
+    #     get_all_values.append(PERSON[key])
+    # return get_all_values
+    return [PERSON[key] for key in sorted(PERSON.keys())]
 
 def get_one(first_name):
     if first_name in PERSON:
