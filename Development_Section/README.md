@@ -16,9 +16,17 @@ Moreover we have used Swagger UI that allows anyone — be it your development t
 One must have Python installed in his local system for deploying this RESTFUL-API easily. Other than Python one must also have to install Python-Flask and its dependencies as mentioned in the requirements.txt file.
 
 
-## Running the RESTFUL-API Service via Gunicorn
+## Running the RESTFUL-API Service
 
-```gunicorn --workers 4 --access-logfile /var/tmp/gunicorn.logs --bind 0.0.0.0:5000 wsgi:app``` 
+```
+python server.py
+```
+
+**You can also run the RESTFUL-API via Gunicorn**
+
+```
+gunicorn --workers 4 --access-logfile /var/tmp/gunicorn.logs --bind 0.0.0.0:5000 wsgi:app
+``` 
 
 **workers = 4 (The number of worker processes. This number should generally be between 2-4 workers per core in the server.)**
 
