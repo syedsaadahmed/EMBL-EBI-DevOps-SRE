@@ -1,7 +1,6 @@
-
 swagger: "2.0"
 info:
-  description: Swagger file
+  description: This is the swagger yaml file
   version: "1.0.0"
   title: Swagger REST API
 consumes:
@@ -12,103 +11,105 @@ produces:
 basePath: /api
 
 paths:
-  /person:
+  /people:
     get:
-      operationId: person.get_all
+      operationId: people.get_all
       tags:
-        - person
-      description: Read the list of person
+        - People
+      summary: Read the entire list of people
+      description: Read the list of people
       parameters:
         - name: length
           in: query
           type: integer
-          description: Number of person to get from person
+          description: Number of people to get from people
           required: false
         - name: offset
           in: query
           type: integer
-          description: Offset from beginning of list where to start gathering person
+          description: Offset from beginning of list where to start gathering people
           required: false
       responses:
         200:
-          description: Successfully read person list operation
+          description: Successfully read people list operation
           schema:
             type: array
             items:
               properties:
-                first_name:
+                fname:
                   type: string
-                last_name:
+                lname:
                   type: string
                 age:
                   type: integer
-                favourite_color:
+                favorite_color:
                   type: string
 
-
     post:
-      operationId: person.add
+      operationId: people.add
       tags:
-        - person
-      description: add a new person in the person list
+        - people
+      summary: Create a person and add it to the people list
+      description: Create a new person in the people list
       parameters:
         - name: person
           in: body
-          description: Person to add
+          description: Person to create
           required: True
           schema:
             type: object
             properties:
-              first_name:
+              fname:
                 type: string
-                description: First name of person to added
-              last_name:
+                description: First name of person to create
+              lname:
                 type: string
-                description: Last name of person to added
+                description: Last name of person to create
               age:
                 type: integer
-                description: Age of person to be added
-              favourite_color:
+                description: Age of person to create
+              favorite_color:
                 type: string
-                description: Favourite color of person to added
+                description: Favourite color of person to create
       responses:
         201:
-          description: Person successfully added to the list 
+          description: Successfully created person in list
 
-
-
-  /person/{first_name}:
+  /people/{fname}:
     get:
-      operationId: person.get_one
+      operationId: people.get_one
       tags:
-        - person
-      description: Read one person from the person list
+        - people
+      summary: Read one person from the people list
+      description: Read one person from the people list
       parameters:
-        - name: first_name
+        - name: fname
           in: path
-          description: First name of the person to fetch from the list
+          description: First name of the person to get from the list
           type: string
           required: True
       responses:
         200:
-          description: all read person from person's list
+          description: Successfully read person from people list operation
           schema:
             properties:
-              first_name:
+              fname:
                 type: string
-              last_name:
+              lname:
                 type: string
               age:
                 type: integer
-              favourite_color:
+              favorite_color:
                 type: string
+
     put:
-      operationId: person.update
+      operationId: people.update
       tags:
-        - person
-      description: Update a person in the person list
+        - people
+      summary: Update a person in the people list
+      description: Update a person in the people list
       parameters:
-        - name: first_name
+        - name: fname
           in: path
           description: First name of the person to update in the list
           type: string
@@ -118,28 +119,29 @@ paths:
           schema:
             type: object
             properties:
-              first_name:
+              fname:
                 type: string
-              last_name:
+              lname:
                 type: string
               age:
                 type: integer
-              favourite_color:
-                type: string                
+              favorite_color:
+                type: string
       responses:
         200:
-          description: Successfully updated person in person list
+          description: Successfully updated person in people list
 
     delete:
-      operationId: person.delete
+      operationId: people.delete
       tags:
-        - person
-      description: Delete a person from the list
+        - people
+      summary: Delete a person from the people list
+      description: Delete a person
       parameters:
-        - name: first_name
+        - name: fname
           in: path
           type: string
           required: True
       responses:
         200:
-          description: Successfully deleted a person from person list
+          description: Successfully deleted a person from people list
