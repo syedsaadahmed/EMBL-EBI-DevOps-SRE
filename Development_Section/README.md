@@ -18,8 +18,9 @@ One must have Python installed in his local system for deploying this RESTFUL-AP
 
 ## Running the RESTFUL-API Service
 
+using nohup (no hangup) 
 ```
-python server.py
+nohup python server.py &
 ```
 
 **You can also run the RESTFUL-API via Gunicorn**
